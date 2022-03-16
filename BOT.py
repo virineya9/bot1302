@@ -6,7 +6,7 @@ bot = telebot.TeleBot(token)
 def repeat_all_messages(message): # Название функции не играет никакой роли
     bot.send_message(message.chat.id, message.text)
     
-@bot.message_handler(comands=["start"])
+@bot.message_handler(commands=["start"])
 def  start_message(message):
     bot.send_message(message.chat.id, text = "Hi, {0.first_name}!".format(message.from_user))
 
