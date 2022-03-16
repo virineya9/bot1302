@@ -16,7 +16,7 @@ def button_message(message):
 
 @bot.message_handler(commands=["img"]) 
 def image(message):
-    bot.send_photo(message.chat.id, photo = open('kotikdlybotik.jpg,crdownload', 'rb'))     
+    bot.send_photo(message.chat.id, photo = open('kotikdlybotik.jpg.crdownload', 'rb'))     
     
 @bot.message_handler(content_types=["text"])
 def repeat_all_messages(message): # Название функции не играет никакой роли
