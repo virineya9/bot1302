@@ -8,7 +8,7 @@ def  start_message(message):
     
 @bot.message_handler(commands=["button"])
     def  button_message(message):
-        markup.types = types.ReplyKeyboardMarkup(resize_keyboard = True)
+        markup= types.ReplyKeyboardMarkup(resize_keyboard = True)
         item1 = types.KeyboardButton("Кнопочка")
         markup.add(item1)
         bot.send_message(message.chat.id, 'Выберите, зачем вы тут', reply_markup = markup)
