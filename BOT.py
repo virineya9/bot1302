@@ -8,7 +8,7 @@ def repeat_all_messages(message): # Название функции не игр�
     
 @bot.message_handler(commands=["start"])
 def  start_message(message):
-    bot.send_message(message.chat.id, text = "Hi, {0.first_name}!".format(message.from_user))
+    bot.send_message(message.chat.id, text = "Hi")
 
 if __name__ == '__main__':
      bot.infinity_polling()
