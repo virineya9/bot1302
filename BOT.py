@@ -8,7 +8,7 @@ def  start_message(message):
     bot.send_message(message.chat.id, text = "Приветик, {0.first_name}!".format(message.from_user))
     
 @bot.message_handler(commands=["button"])
-    def  button_message(message):
+    def button_message(message):
         markup= types.ReplyKeyboardMarkup(resize_keyboard = True)
         item1 = types.KeyboardButton("Кнопочка")
         markup.add(item1)
