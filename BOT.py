@@ -7,14 +7,6 @@ bot = telebot.TeleBot(token)
 def  start_message(message):
     bot.send_message(message.chat.id, text = "Приветик, {0.first_name}!".format(message.from_user))
     
-        
-@bot.message_handler(content_types=["text"])
-def repeat_all_messages(message): # Название функции не играет никакой роли
-    bot.send_message(message.chat.id, message.text)
-
-if __name__ == '__main__':
-     bot.infinity_polling()
-        
 @bot.message_handler(commands=["button"])
     def  button_message(message):
         markup= types.ReplyKeyboardMarkup(resize_keyboard = True)
@@ -22,3 +14,12 @@ if __name__ == '__main__':
         markup.add(item1)
         bot.send_message(message.chat.id, 'Выберите, зачем вы тут', reply_markup = markup)
         
+    
+@bot.message_handler(content_types=["text"])
+def repeat_all_messages(message): # Название функции не играет никакой роли
+    bot.send_message(message.chat.id, message.text)
+
+if __name__ == '__main__':
+     bot.infinity_polling()
+        
+
