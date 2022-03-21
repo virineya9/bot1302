@@ -19,6 +19,11 @@ def button_message(message):
 
 @bot.message_handler(content_types=["text"])
 def message_reply(message):
+    if message.text == "Поступить разумно и дальше искать выход из леса.":
+        bot.send_message(message.chat.id, 'Удачи с этим.')    
+        
+@bot.message_handler(content_types=["text"])
+def message_reply(message):
     if message.text == "Войти в замок, я же не трус.":
         markup= types.ReplyKeyboardMarkup(resize_keyboard = True)
         b1 = types.KeyboardButton("Темный и страшный, с ножницами в лапках")
@@ -41,11 +46,7 @@ def message_reply(message):
 def message_reply(message):
     if message.text == "Темный и страшный, с ножницами в лапках":
         bot.send_message(message.chat.id, 'Поздравляю, тебя убили этими самыми ножницами.')
-        
-@bot.message_handler(content_types=["text"])
-def message_reply(message):
-    if message.text == "Поступить разумно и дальше искать выход из леса.":
-        bot.send_message(message.chat.id, 'Удачи с этим.')           
+     
 
 if __name__ == '__main__':
      bot.infinity_polling()
