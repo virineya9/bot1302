@@ -3,9 +3,6 @@ from telebot import types
 token = '5209209288:AAE2TcFelXOkvp7GQKOr5Bgh9mbJxEMUe1w'
 bot = telebot.TeleBot(token)
 
-@bot.message_handler(commands=["start"])
-def start_message(message):
-    bot.send_message(message.chat.id, text = "Приветик, {0.first_name}!, я тестовый БОТ".format(message.from_user))  
     
 @bot.message_handler(commands=["start"])
 def start_message(message):
