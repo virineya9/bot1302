@@ -26,8 +26,22 @@ def message_reply(message):
         markup.add(b1)
         markup.add(b2)
         bot.send_message(message.chat.id, 'Перед тобой две двери, на одной из них нарисован темный и страшный кот, который держит в руках ножницы, а на другой белый и пушистый котик, в руках которого колбаса. В какую дверь пойдешь?', reply_markup = markup)  
-         
 
+@bot.message_handler(content_types=["text"])
+def message_reply(message):
+    if message.text == "Белый и пушистый, с колбасой":
+        markup= types.ReplyKeyboardMarkup(resize_keyboard = True)
+        bu1 = types.KeyboardButton("Ключ")
+        bu2 = types.KeyboardButton("Колбасу")
+        markup.add(bu1)
+        markup.add(bu2)
+        bot.send_message(message.chat.id, 'Ты нравишься белому и пушистому котику и он предлагает на выбор: ключ и колбасу. Что выберешь?', reply_markup = markup)  
+
+@bot.message_handler(content_types=["text"])
+def message_reply(message):
+    if message.text == "Темный и страшный, с ножницами в лапках":
+        bot.send_message(message.chat.id, 'Поздравляю, тебя убили этими самыми ножницами.')
+        
 @bot.message_handler(content_types=["text"])
 def message_reply(message):
     if message.text == "Поступить разумно и дальше искать выход из леса.":
