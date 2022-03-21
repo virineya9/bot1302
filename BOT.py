@@ -20,14 +20,18 @@ def button_message(message):
 @bot.message_handler(content_types=["text"])
 def message_reply(message):
     if message.text == "Войти в замок, я же не трус.":
-        
-        bot.send_message(message.chat.id, 'Я могу отправить мем с котиком.', reply_markup = markup)  
+        markup= types.ReplyKeyboardMarkup(resize_keyboard = True)
+        b1 = types.KeyboardButton("Темный и страшный, с ножницами в лапках")
+        b2 = types.KeyboardButton("Белый и пушистый, с колбасой")
+        markup.add(b1)
+        markup.add(b2)
+        bot.send_message(message.chat.id, 'Перед тобой две двери, на одной из них нарисован темный и страшный кот, который держит в руках ножницы, а на другой белый и пушистый котик, в руках которого колбаса. В какую дверь пойдешь?', reply_markup = markup)  
          
 
 @bot.message_handler(content_types=["text"])
 def message_reply(message):
     if message.text == "Поступить разумно и дальше искать выход из леса.":
-       bot.send_message(message.chat.id, 'Удачи с этим.')           
+        bot.send_message(message.chat.id, 'Удачи с этим.')           
 
 if __name__ == '__main__':
      bot.infinity_polling()
